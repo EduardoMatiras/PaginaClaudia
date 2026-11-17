@@ -21,6 +21,8 @@ export function GET() {
 - Formação: ${site.formacao}
 - Público: adultos e adolescentes
 - Modalidade: presencial em ${site.endereco.cidade} – ${site.endereco.estado} e online para todo o Brasil
+- Cidades próximas atendidas (presencial em Rondonópolis ou online): ${site.cidadesProximas.join(", ")}
+- Online para todo o Mato Grosso (ex.: ${site.cidadesOnline.join(", ")}) e o Brasil
 - Agendamento: WhatsApp ${site.whatsapp} (${whatsappLink()})
 - E-mail: ${site.email}
 - Instagram: ${site.instagram.url}

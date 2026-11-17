@@ -8,7 +8,10 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} {site.nome} · Psicóloga clínica · CRP {site.crp}
           </div>
-          <div>Psicóloga em Rondonópolis – MT · Especialista em perdas e luto · Atendimento presencial e online</div>
+          <div>
+            Psicóloga em Rondonópolis – Mato Grosso · Especialista em perdas e luto · Presencial em
+            Rondonópolis e online para todo o MT e o Brasil · WhatsApp {site.whatsapp}
+          </div>
           <div>
             Este site não oferece atendimento de emergência. Em crise, ligue 188 (CVV) ou 192
             (SAMU).

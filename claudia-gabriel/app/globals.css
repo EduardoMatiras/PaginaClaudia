@@ -906,3 +906,59 @@ strong {
 address {
   font-style: normal;
 }
+
+/* ---------- Atendimento em Rondonópolis e MT ---------- */
+.local {
+  display: grid;
+  gap: 36px;
+  padding: clamp(28px, 4vw, 56px);
+}
+@media (min-width: 900px) {
+  .local {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+.local-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.local-intro .title {
+  font-size: clamp(28px, 3.4vw, 42px);
+}
+.local-cidades {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.local-cidades h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+.local-cidades h3 svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.local-cidades p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.local-cidades ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.local-cidades li {
+  font-size: 13.5px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 5px 12px;
+}

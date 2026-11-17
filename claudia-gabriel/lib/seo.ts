@@ -6,10 +6,10 @@ export const seo = {
   tituloCurto: "Claudia Gabriel – Psicóloga em Rondonópolis",
   // Até ~155 caracteres.
   descricao:
-    "Psicóloga em Rondonópolis (MT) especialista em perdas e luto e TCC. Atendimento a adultos e adolescentes, presencial e online. CRP 18/8181.",
+    "Psicóloga em Rondonópolis – MT especialista em perdas e luto e TCC. Adultos e adolescentes, presencial e online para todo o Mato Grosso. CRP 18/8181.",
   // Resumo factual e autocontido: é o trecho que buscadores de IA (AEO/GEO) tendem a citar.
   resumo:
-    "Claudia Gabriel é psicóloga clínica (CRP 18/8181) em Rondonópolis, Mato Grosso, especialista em Perdas e Luto e em Terapia Cognitivo-Comportamental (TCC) pelo ITCC-MS. Atende adultos e adolescentes, presencialmente em Rondonópolis e online para todo o Brasil. O agendamento é feito pelo WhatsApp (66) 99667-2819.",
+    "Claudia Gabriel é psicóloga clínica (CRP 18/8181) em Rondonópolis, Mato Grosso, especialista em Perdas e Luto e em Terapia Cognitivo-Comportamental (TCC) pelo ITCC-MS. Atende adultos e adolescentes, presencialmente em Rondonópolis (região Sul de Mato Grosso) e online para todo o Mato Grosso e o Brasil. O agendamento é feito pelo WhatsApp (66) 99667-2819.",
   palavrasChave: [
     "psicóloga em Rondonópolis",
     "psicóloga Rondonópolis MT",
@@ -32,6 +32,16 @@ export const seo = {
     "psicóloga online luto",
     "psicóloga online",
     "psicólogo luto Mato Grosso",
+    "psicóloga Mato Grosso",
+    "psicóloga MT",
+    "psicóloga online Mato Grosso",
+    "psicóloga em Cuiabá online",
+    "psicóloga perto de mim Rondonópolis",
+    "melhor psicóloga Rondonópolis",
+    "consultório de psicologia Rondonópolis",
+    "psicóloga Pedra Preta",
+    "psicóloga Jaciara",
+    "psicóloga Primavera do Leste",
     "psicoterapia Rondonópolis",
     "Claudia Gabriel psicóloga",
   ],
@@ -44,6 +54,11 @@ export const faq = [
     pergunta: "Você atende em Rondonópolis?",
     resposta:
       "Sim. Meu consultório fica em Rondonópolis, Mato Grosso, com atendimento presencial. Também atendo online, para quem mora em outras cidades ou prefere ser atendido de casa.",
+  },
+  {
+    pergunta: "Atende pacientes de outras cidades de Mato Grosso?",
+    resposta:
+      "Sim. Pessoas de cidades próximas, como Pedra Preta, Juscimeira, Jaciara, Itiquira, Guiratinga, Poxoréu e Primavera do Leste, podem ser atendidas no consultório em Rondonópolis ou online. Para Cuiabá, Várzea Grande, Sinop e demais cidades de Mato Grosso e do Brasil, o atendimento é online, por videochamada.",
   },
   {
     pergunta: "Como a terapia pode ajudar no luto?",
@@ -178,7 +193,25 @@ export function jsonLd() {
           areaServed: "BR",
         },
         areaServed: [
-          { "@type": "City", name: "Rondonópolis" },
+          {
+            "@type": "City",
+            name: "Rondonópolis",
+            containedInPlace: { "@type": "State", name: "Mato Grosso" },
+          },
+          ...[...site.cidadesProximas, ...site.cidadesOnline].map((name) => ({
+            "@type": "City",
+            name,
+            containedInPlace: { "@type": "State", name: "Mato Grosso" },
+          })),
+          {
+            "@type": "GeoCircle",
+            geoMidpoint: {
+              "@type": "GeoCoordinates",
+              latitude: site.endereco.latitude,
+              longitude: site.endereco.longitude,
+            },
+            geoRadius: 150000,
+          },
           { "@type": "State", name: "Mato Grosso" },
           { "@type": "Country", name: "Brasil" },
         ],
@@ -232,7 +265,10 @@ export function jsonLd() {
         hasOccupation: {
           "@type": "Occupation",
           name: "Psicóloga clínica",
-          occupationLocation: { "@type": "City", name: "Rondonópolis" },
+          occupationLocation: [
+            { "@type": "City", name: "Rondonópolis" },
+            { "@type": "State", name: "Mato Grosso" },
+          ],
         },
         alumniOf: [
           { "@type": "CollegeOrUniversity", name: site.formacao },

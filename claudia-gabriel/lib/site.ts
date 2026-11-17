@@ -19,6 +19,32 @@ export const site = {
     latitude: -16.4673,
     longitude: -54.6372,
   },
+  // Cidades da região Sul de Mato Grosso (presencial em Rondonópolis ou online).
+  cidadesProximas: [
+    "Pedra Preta",
+    "Juscimeira",
+    "Jaciara",
+    "São Pedro da Cipa",
+    "Itiquira",
+    "Guiratinga",
+    "Poxoréu",
+    "Dom Aquino",
+    "São José do Povo",
+    "Primavera do Leste",
+    "Campo Verde",
+    "Alto Garças",
+  ],
+  // Atendimento online para todo o estado (e o Brasil).
+  cidadesOnline: [
+    "Cuiabá",
+    "Várzea Grande",
+    "Sinop",
+    "Tangará da Serra",
+    "Sorriso",
+    "Lucas do Rio Verde",
+    "Barra do Garças",
+    "Cáceres",
+  ],
   formacao: "Faculdade Anhanguera de Rondonópolis",
   especializacoes: ["Perdas e Luto", "Terapia Cognitivo-Comportamental"],
   instagram: {

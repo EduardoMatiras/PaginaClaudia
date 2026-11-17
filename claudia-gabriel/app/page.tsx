@@ -5,6 +5,7 @@ import Sobre from "@/components/Sobre";
 import ComoAjudar from "@/components/ComoAjudar";
 import ComoFunciona from "@/components/ComoFunciona";
 import PrimeiraVez from "@/components/PrimeiraVez";
+import AtendimentoLocal from "@/components/AtendimentoLocal";
 import Perguntas from "@/components/Perguntas";
 import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <Sobre />
         <ComoAjudar />
         <ComoFunciona />
+        <AtendimentoLocal />
         <PrimeiraVez />
         <Perguntas />
         <Contato />
