@@ -3,7 +3,7 @@ import { CheckIcon, VideoCallIcon, WhatsappLogo } from "./icons";
 
 export default function ComoAjudar() {
   return (
-    <section className="container">
+    <section id="como-ajudar" className="container" aria-label="Como a terapia ajuda no luto">
       <div className="card ajudar">
         <div className="ajudar-intro">
           <h2 className="title">

@@ -1,10 +1,15 @@
-import { site, telefoneInternacional } from "./site";
+import { site, telefoneInternacional, whatsappLink } from "./site";
 
 export const seo = {
-  titulo: "Psicóloga em Rondonópolis – MT | Especialista em Perdas e Luto | Claudia Gabriel",
+  // Até ~60 caracteres para não ser cortado no Google.
+  titulo: "Psicóloga em Rondonópolis – MT | Luto e Perdas | Claudia Gabriel",
   tituloCurto: "Claudia Gabriel – Psicóloga em Rondonópolis",
+  // Até ~155 caracteres.
   descricao:
-    "Claudia Gabriel, psicóloga em Rondonópolis (MT) especialista em perdas e luto e Terapia Cognitivo-Comportamental. Atende adultos e adolescentes, presencial e online. CRP 18/8181.",
+    "Psicóloga em Rondonópolis (MT) especialista em perdas e luto e TCC. Atendimento a adultos e adolescentes, presencial e online. CRP 18/8181.",
+  // Resumo factual e autocontido: é o trecho que buscadores de IA (AEO/GEO) tendem a citar.
+  resumo:
+    "Claudia Gabriel é psicóloga clínica (CRP 18/8181) em Rondonópolis, Mato Grosso, especialista em Perdas e Luto e em Terapia Cognitivo-Comportamental (TCC) pelo ITCC-MS. Atende adultos e adolescentes, presencialmente em Rondonópolis e online para todo o Brasil. O agendamento é feito pelo WhatsApp (66) 99667-2819.",
   palavrasChave: [
     "psicóloga em Rondonópolis",
     "psicóloga Rondonópolis MT",
@@ -18,16 +23,22 @@ export const seo = {
     "terapia do luto Rondonópolis",
     "terapia para luto",
     "acompanhamento psicológico no luto",
+    "terapia para perda de ente querido",
+    "como lidar com o luto",
     "psicóloga para adolescentes em Rondonópolis",
     "psicóloga adolescentes Rondonópolis",
     "terapia cognitivo-comportamental Rondonópolis",
     "TCC Rondonópolis",
     "psicóloga online luto",
+    "psicóloga online",
+    "psicólogo luto Mato Grosso",
     "psicoterapia Rondonópolis",
     "Claudia Gabriel psicóloga",
   ],
 };
 
+// Perguntas escritas como as pessoas buscam (Google, assistentes de voz e IAs),
+// com respostas diretas na primeira frase.
 export const faq = [
   {
     pergunta: "Você atende em Rondonópolis?",
@@ -45,6 +56,16 @@ export const faq = [
       "Não. O luto pode surgir em qualquer perda significativa: o fim de um relacionamento, uma mudança de cidade, a perda de um emprego, um diagnóstico ou outras rupturas importantes. Toda perda que dói merece ser acolhida.",
   },
   {
+    pergunta: "Quanto tempo dura o luto?",
+    resposta:
+      "Não existe um prazo certo. O luto é um processo individual, que depende do vínculo com quem ou com o que se perdeu, das circunstâncias da perda e da rede de apoio de cada pessoa. A dor tende a mudar de forma com o tempo, mas não precisa ser enfrentada sozinha.",
+  },
+  {
+    pergunta: "Quando devo procurar uma psicóloga por causa do luto?",
+    resposta:
+      "Vale buscar ajuda quando a dor dificulta a rotina por muito tempo, quando há culpa intensa, isolamento, dificuldade para dormir ou trabalhar, ou quando você sente que não tem com quem falar sobre a perda. Não é preciso esperar ficar pior. Em situação de crise, ligue 188 (CVV) ou 192 (SAMU).",
+  },
+  {
     pergunta: "Você atende adolescentes?",
     resposta:
       "Sim. Atendo adolescentes e adultos em Rondonópolis e online. O acompanhamento é adaptado à fase de vida de cada pessoa, com acolhimento e linguagem próximos da realidade de quem chega.",
@@ -55,16 +76,23 @@ export const faq = [
       "É uma abordagem da psicologia baseada em evidências científicas. Ela ajuda a compreender a relação entre pensamentos, emoções e comportamentos, e a desenvolver estratégias práticas para lidar com o sofrimento.",
   },
   {
+    pergunta: "A terapia online funciona?",
+    resposta:
+      "Sim. O atendimento psicológico online é regulamentado pelo Conselho Federal de Psicologia e segue os mesmos cuidados éticos e de sigilo do presencial. As sessões são feitas por videochamada, para quem mora fora de Rondonópolis ou prefere ser atendido de casa.",
+  },
+  {
     pergunta: "Como faço para agendar uma consulta?",
     resposta:
       "É só enviar uma mensagem pelo WhatsApp (66) 99667-2819. Eu explico como funciona o atendimento e vemos juntos o melhor horário para você.",
   },
 ];
 
-// Dados estruturados (JSON-LD) para o Google: profissional local, pessoa, site e perguntas frequentes.
+// Dados estruturados (JSON-LD): site, página médica revisada, consultório local,
+// profissional (E-E-A-T), tema do luto e perguntas frequentes.
 export function jsonLd() {
   const id = (ancora: string) => `${site.url}/#${ancora}`;
   const imagem = `${site.url}/opengraph-image.jpg`;
+  const hoje = new Date().toISOString().slice(0, 10);
 
   const endereco = {
     "@type": "PostalAddress",
@@ -81,35 +109,73 @@ export function jsonLd() {
         "@id": id("website"),
         url: site.url,
         name: seo.tituloCurto,
+        alternateName: "Psicóloga Claudia Gabriel",
         inLanguage: "pt-BR",
         publisher: { "@id": id("consultorio") },
       },
       {
-        "@type": "WebPage",
+        // MedicalWebPage revisada pela profissional: sinal de confiabilidade (E-E-A-T) em saúde.
+        "@type": ["WebPage", "MedicalWebPage"],
         "@id": id("webpage"),
         url: site.url,
         name: seo.titulo,
         description: seo.descricao,
+        abstract: seo.resumo,
         inLanguage: "pt-BR",
         isPartOf: { "@id": id("website") },
-        about: { "@id": id("consultorio") },
-        primaryImageOfPage: imagem,
+        about: [{ "@id": id("consultorio") }, { "@id": id("luto") }],
+        mainEntity: { "@id": id("consultorio") },
+        author: { "@id": id("claudia") },
+        reviewedBy: { "@id": id("claudia") },
+        lastReviewed: hoje,
+        dateModified: hoje,
+        audience: {
+          "@type": "PeopleAudience",
+          audienceType: "Adultos e adolescentes em processo de luto",
+        },
+        primaryImageOfPage: { "@type": "ImageObject", url: imagem },
+        // Trechos indicados para assistentes de voz e respostas geradas por IA.
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: [".hero-eyebrow", ".resumo", ".pergunta"],
+        },
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": id("luto"),
+        name: "Luto",
+        alternateName: ["Processo de luto", "Perdas e luto"],
+        possibleTreatment: {
+          "@type": "MedicalTherapy",
+          name: "Terapia Cognitivo-Comportamental (TCC) para o luto",
+        },
       },
       {
         "@type": ["MedicalBusiness", "LocalBusiness"],
         "@id": id("consultorio"),
         name: "Claudia Gabriel – Psicóloga em Rondonópolis",
-        description: seo.descricao,
+        alternateName: ["Psicóloga Claudia Gabriel", "Psic. Claudia Gabriel"],
+        description: seo.resumo,
         url: site.url,
         image: imagem,
         logo: `${site.url}/logo.png`,
         telephone: telefoneInternacional,
         email: site.email,
         address: endereco,
+        hasMap: `https://www.google.com/maps?q=${site.endereco.latitude},${site.endereco.longitude}`,
         geo: {
           "@type": "GeoCoordinates",
           latitude: site.endereco.latitude,
           longitude: site.endereco.longitude,
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "Agendamento",
+          telephone: telefoneInternacional,
+          email: site.email,
+          url: whatsappLink(),
+          availableLanguage: "Portuguese",
+          areaServed: "BR",
         },
         areaServed: [
           { "@type": "City", name: "Rondonópolis" },
@@ -137,7 +203,13 @@ export function jsonLd() {
             "Atendimento psicológico presencial em Rondonópolis",
           ].map((nome) => ({
             "@type": "Offer",
-            itemOffered: { "@type": "Service", name: nome, areaServed: "Rondonópolis – MT" },
+            itemOffered: {
+              "@type": "Service",
+              name: nome,
+              serviceType: "Psicoterapia",
+              provider: { "@id": id("claudia") },
+              areaServed: "Rondonópolis – MT",
+            },
           })),
         },
         founder: { "@id": id("claudia") },
@@ -150,25 +222,51 @@ export function jsonLd() {
         jobTitle: "Psicóloga clínica especialista em perdas e luto",
         description:
           "Psicóloga clínica em Rondonópolis (MT), especialista em Perdas e Luto e em Terapia Cognitivo-Comportamental.",
-        image: `${site.url}/opengraph-image.jpg`,
+        image: imagem,
         url: site.url,
         email: site.email,
         telephone: telefoneInternacional,
         address: endereco,
+        knowsLanguage: "pt-BR",
         worksFor: { "@id": id("consultorio") },
-        alumniOf: { "@type": "CollegeOrUniversity", name: site.formacao },
-        hasCredential: {
-          "@type": "EducationalOccupationalCredential",
-          credentialCategory: "Registro profissional",
-          name: `CRP ${site.crp}`,
-          recognizedBy: { "@type": "Organization", name: "Conselho Regional de Psicologia" },
+        hasOccupation: {
+          "@type": "Occupation",
+          name: "Psicóloga clínica",
+          occupationLocation: { "@type": "City", name: "Rondonópolis" },
         },
-        knowsAbout: ["Perdas e luto", "Terapia Cognitivo-Comportamental", "Adolescentes"],
+        alumniOf: [
+          { "@type": "CollegeOrUniversity", name: site.formacao },
+          { "@type": "EducationalOrganization", name: "ITCC-MS" },
+        ],
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Registro profissional",
+            name: `CRP ${site.crp}`,
+            recognizedBy: {
+              "@type": "Organization",
+              name: "Conselho Regional de Psicologia da 18ª Região (CRP-18 MT)",
+            },
+          },
+          ...site.especializacoes.map((nome) => ({
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Especialização",
+            name: `Especialização em ${nome}`,
+          })),
+        ],
+        knowsAbout: [
+          "Perdas e luto",
+          "Terapia Cognitivo-Comportamental",
+          "Psicoterapia para adolescentes",
+          "Psicoeducação no luto",
+          "Saúde mental",
+        ],
         sameAs: site.redes,
       },
       {
         "@type": "FAQPage",
         "@id": id("faq"),
+        isPartOf: { "@id": id("webpage") },
         mainEntity: faq.map((item) => ({
           "@type": "Question",
           name: item.pergunta,

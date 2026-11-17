@@ -15,13 +15,19 @@ export default function Contato() {
             </h2>
             <p>Chegar até aqui já é um passo. Escreva quando se sentir à vontade.</p>
           </div>
-          <div className="contato-formas">
+          <address className="contato-formas">
             <div className="contato-formas-titulo">Formas de contato</div>
             <div className="contato-item">
               <WhatsappIcon />
               <span>
                 <strong>WhatsApp:</strong>{" "}
-                <a href={conversar} target="_blank" rel="noopener" className="contato-link">
+                <a
+                  href={conversar}
+                  target="_blank"
+                  rel="noopener"
+                  className="contato-link"
+                  aria-label={`WhatsApp ${site.whatsapp}`}
+                >
                   {site.whatsapp}
                 </a>
               </span>
@@ -41,7 +47,7 @@ export default function Contato() {
                 <strong>Consultório:</strong> {site.cidade}
               </span>
             </div>
-          </div>
+          </address>
           <div className="contato-acao">
             <a
               href={conversar}

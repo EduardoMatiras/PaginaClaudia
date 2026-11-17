@@ -10,7 +10,7 @@ const dores = [
 
 export default function Dores() {
   return (
-    <section className="container">
+    <section className="container" aria-label="Sinais do luto">
       <div className="card dores">
         <div className="dores-intro">
           <h2 className="title">

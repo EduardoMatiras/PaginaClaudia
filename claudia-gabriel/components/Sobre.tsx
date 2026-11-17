@@ -1,7 +1,7 @@
 import Image from "next/image";
 import fotoSobre from "@/public/claudia-sobre-1.webp";
 import fotoSobre2 from "@/public/claudia-sobre-2.webp";
-import { site } from "@/lib/site";
+import { pendente, site } from "@/lib/site";
 
 export default function Sobre() {
   return (
@@ -36,10 +36,11 @@ export default function Sobre() {
           Sobre <strong>mim</strong>
         </h2>
         <p className="sobre-destaque">Um lugar onde a sua perda pode ser dita.</p>
-        <p>
-          Sou Claudia Gabriel, psicóloga formada pela Faculdade Anhanguera de Rondonópolis (MT),
-          especialista em <strong>Perdas e Luto</strong> e em{" "}
-          <strong>Terapia Cognitivo-Comportamental</strong> pelo ITCC-MS.
+        <p className="resumo">
+          Sou Claudia Gabriel, psicóloga clínica (CRP {site.crp}) formada pela Faculdade Anhanguera
+          de Rondonópolis (MT), especialista em <strong>Perdas e Luto</strong> e em{" "}
+          <strong>Terapia Cognitivo-Comportamental</strong> pelo ITCC-MS. Atendo adultos e
+          adolescentes no meu consultório em Rondonópolis e online, para todo o Brasil.
         </p>
         <p>
           Sou apaixonada pelo meu trabalho. Meu objetivo é acolher a demanda de cada paciente,
@@ -52,7 +53,8 @@ export default function Sobre() {
           de viajar, conhecer lugares novos, tirar fotos e observar o pôr do sol e a natureza.
         </p>
         <div className="sobre-meta">
-          CRP {site.crp} · {site.anosExperiencia} anos de experiência
+          CRP {site.crp}
+          {!pendente(site.anosExperiencia) && ` · ${site.anosExperiencia} anos de experiência`}
         </div>
       </div>
     </section>

@@ -32,6 +32,9 @@ export const site = {
   ],
 };
 
+// true quando o valor ainda é um placeholder do layout (ex.: "[X]"), para não exibi-lo no site.
+export const pendente = (valor: string) => /^\[.*\]$/.test(valor.trim());
+
 // Telefone no formato internacional (E.164), usado no schema e em links tel:
 export const telefoneInternacional = `+55${site.whatsapp.replace(/\D/g, "")}`;
 

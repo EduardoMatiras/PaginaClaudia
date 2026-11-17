@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: seo.titulo,
+  title: { default: seo.titulo, template: `%s | ${seo.tituloCurto}` },
   description: seo.descricao,
   keywords: seo.palavrasChave,
   applicationName: seo.tituloCurto,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   creator: site.nome,
   publisher: site.nome,
   category: "health",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "pt-BR": "/" } },
   formatDetection: { telephone: false },
   openGraph: {
     type: "website",
@@ -44,16 +44,30 @@ export const metadata: Metadata = {
     title: seo.titulo,
     description: seo.descricao,
   },
+  // Preencher as variáveis de ambiente com os códigos do Google Search Console e Bing Webmaster.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
+  },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   other: {
     "geo.region": "BR-MT",
     "geo.placename": "Rondonópolis",
     "geo.position": `${site.endereco.latitude};${site.endereco.longitude}`,
     ICBM: `${site.endereco.latitude}, ${site.endereco.longitude}`,
+    "content-language": "pt-BR",
   },
 };
 
@@ -64,6 +78,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${montserrat.className} ${playfair.variable}`}>
+      <head>
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="Resumo para IA" />
+      </head>
       <body>{children}</body>
     </html>
   );

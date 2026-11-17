@@ -15,7 +15,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Links | Claudia Gabriel – Psicóloga em Rondonópolis",
+  title: "Links",
   description:
     "Agende sua consulta com a psicóloga Claudia Gabriel, especialista em perdas e luto em Rondonópolis – MT. Palestras, rodas de conversa e atendimento presencial e online.",
   alternates: { canonical: "/links" },

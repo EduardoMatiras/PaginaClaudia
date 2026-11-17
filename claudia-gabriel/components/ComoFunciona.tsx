@@ -1,4 +1,4 @@
-import { site } from "@/lib/site";
+import { pendente, site } from "@/lib/site";
 
 const passos = [
   {
@@ -11,7 +11,9 @@ const passos = [
   },
   {
     titulo: "Acompanhamento",
-    texto: `Sessões individuais de ${site.duracaoSessao}, no seu ritmo e com sigilo.`,
+    texto: pendente(site.duracaoSessao)
+      ? "Sessões individuais, no seu ritmo e com sigilo."
+      : `Sessões individuais de ${site.duracaoSessao}, no seu ritmo e com sigilo.`,
   },
 ];
 
