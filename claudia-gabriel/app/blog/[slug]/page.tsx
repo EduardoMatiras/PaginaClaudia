@@ -9,6 +9,7 @@ import { WhatsappLogo } from "@/components/icons";
 import { buscarPost, formatarData, posts, tempoLeitura } from "@/lib/blog";
 import { jsonLdScript, postJsonLd } from "@/lib/seo";
 import { site, whatsappLink } from "@/lib/site";
+import { servicos } from "@/lib/servicos";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
   const url = `/blog/${post.slug}`;
   return {
-    title: post.tituloSeo ?? post.titulo,
+    title: { absolute: `${post.tituloSeo ?? post.titulo} | Claudia Gabriel` },
     description: post.descricao,
     keywords: post.palavrasChave,
     alternates: { canonical: url },
@@ -138,6 +139,14 @@ export default async function Artigo({ params }: Props) {
               </a>
             </div>
           </aside>
+
+          <nav className="local-servicos artigo-servicos" aria-label="Atendimentos">
+            {servicos.map((s) => (
+              <Link key={s.slug} href={`/${s.slug}`}>
+                {s.titulo}
+              </Link>
+            ))}
+          </nav>
 
           <p className="artigo-aviso">
             Este conteúdo é informativo e não substitui uma avaliação psicológica. Em situação de

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/blog";
 import { site } from "@/lib/site";
+import { servicos } from "@/lib/servicos";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const ultimoPost = posts
@@ -21,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${site.url}/claudia-sobre-2.webp`,
       ],
     },
+    ...servicos.map((s) => ({
+      url: `${site.url}/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
     {
       url: `${site.url}/blog`,
       lastModified: ultimoPost ? new Date(ultimoPost) : new Date(),

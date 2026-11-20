@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { servicos } from "@/lib/servicos";
 
 export default function Footer() {
   return (
@@ -19,6 +20,11 @@ export default function Footer() {
           </div>
         </div>
         <nav className="footer-links" aria-label="Rodapé">
+          {servicos.map((s) => (
+            <Link key={s.slug} href={`/${s.slug}`}>
+              {s.nome}
+            </Link>
+          ))}
           <Link href="/blog">Blog sobre luto</Link>
           <a href={site.instagram.url} target="_blank" rel="noopener me">Instagram {site.instagram.handle}</a>
         </nav>

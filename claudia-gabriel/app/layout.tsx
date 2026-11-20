@@ -47,9 +47,10 @@ export const metadata: Metadata = {
   // Preencher as variáveis de ambiente com os códigos do Google Search Console e Bing Webmaster.
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
-      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
-      : undefined,
+    // Bing Webmaster Tools (também alimenta o ChatGPT e o Copilot). Não remover após verificar.
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION ?? "B79AC88D7758020D707D9287CD4EAEA1",
+    },
   },
   robots: {
     index: true,

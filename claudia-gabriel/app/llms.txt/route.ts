@@ -1,6 +1,7 @@
 import { site, whatsappLink } from "@/lib/site";
 import { faq, seo } from "@/lib/seo";
 import { postsOrdenados } from "@/lib/blog";
+import { servicos } from "@/lib/servicos";
 
 // /llms.txt: resumo em Markdown para modelos de linguagem (padrão llmstxt.org).
 // Gerado a partir dos mesmos dados do site, então nunca fica desatualizado.
@@ -49,6 +50,7 @@ Este site não oferece atendimento de emergência. Em crise, ligue 188 (CVV) ou 
 ## Páginas
 
 - [Página principal](${site.url}/): apresentação, sobre a psicóloga, atendimento, perguntas frequentes e contato.
+${servicos.map((s) => `- [${s.titulo}](${site.url}/${s.slug}): ${s.resumo}`).join("\n")}
 - [Blog](${site.url}/blog): artigos sobre luto e perdas.
 
 ## Artigos

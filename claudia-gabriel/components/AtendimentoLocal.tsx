@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { site, whatsappLink } from "@/lib/site";
+import { servicos } from "@/lib/servicos";
 import { PinIcon, VideoCallIcon, WhatsappLogo } from "./icons";
 
 // Seção de SEO local: deixa explícito para o Google e para as IAs onde e para quem é o atendimento.
@@ -16,6 +18,13 @@ export default function AtendimentoLocal() {
             Brasil, o acompanhamento psicológico também acontece <strong>online</strong>, por
             videochamada, com o mesmo cuidado e sigilo.
           </p>
+          <nav className="local-servicos" aria-label="Atendimentos">
+            {servicos.map((s) => (
+              <Link key={s.slug} href={`/${s.slug}`}>
+                {s.titulo}
+              </Link>
+            ))}
+          </nav>
           <div className="cta">
             <a
               href={whatsappLink("Olá Claudia, vim do site e quero saber sobre o atendimento.")}

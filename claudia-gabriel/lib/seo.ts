@@ -1,4 +1,5 @@
 import type { Post } from "./blog";
+import type { Servico } from "./servicos";
 import { site, telefoneInternacional, whatsappLink } from "./site";
 
 export const seo = {
@@ -407,4 +408,61 @@ export function postJsonLd(post: Post) {
 
 export function jsonLdScript(dados: object) {
   return { __html: JSON.stringify(dados).replace(/</g, "\u003c") };
+}
+
+// ---------- Páginas de serviço ----------
+export function servicoJsonLd(s: Servico) {
+  const url = `${site.url}/${s.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["WebPage", "MedicalWebPage"],
+        "@id": `${url}#webpage`,
+        url,
+        name: s.tituloSeo,
+        description: s.descricao,
+        abstract: s.resumo,
+        inLanguage: "pt-BR",
+        isPartOf: ref("website"),
+        about: { "@id": `${url}#servico` },
+        author: ref("claudia"),
+        reviewedBy: ref("claudia"),
+        speakable: { "@type": "SpeakableSpecification", cssSelector: [".artigo-resumo"] },
+      },
+      {
+        "@type": "Service",
+        "@id": `${url}#servico`,
+        name: s.servicoSchema,
+        serviceType: "Psicoterapia",
+        description: s.resumo,
+        url,
+        provider: ref("consultorio"),
+        areaServed: [
+          { "@type": "City", name: "Rondonópolis" },
+          { "@type": "State", name: "Mato Grosso" },
+          { "@type": "Country", name: "Brasil" },
+        ],
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: whatsappLink(s.mensagemWhatsapp),
+          servicePhone: telefoneInternacional,
+          availableLanguage: "Portuguese",
+        },
+      },
+      migalhas([
+        { nome: "Início", url: site.url },
+        { nome: s.nome, url },
+      ]),
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: s.faq.map((f) => ({
+          "@type": "Question",
+          name: f.pergunta,
+          acceptedAnswer: { "@type": "Answer", text: f.resposta },
+        })),
+      },
+    ],
+  };
 }

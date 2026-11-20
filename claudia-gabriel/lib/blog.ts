@@ -26,6 +26,376 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "natal-e-fim-de-ano-sem-quem-partiu",
+    titulo: "Natal e fim de ano sem quem partiu: como atravessar as datas difíceis",
+    tituloSeo: "Natal sem quem partiu: como atravessar o fim de ano",
+    descricao:
+      "O primeiro Natal sem alguém que amamos costuma doer muito. Orientações de uma psicóloga para planejar as festas, lidar com a saudade e honrar quem partiu.",
+    resumo:
+      "O Natal e a virada de ano costumam intensificar a saudade de quem partiu, especialmente no primeiro ano. Ajuda planejar com antecedência como e com quem passar as datas, permitir-se mudar tradições, incluir a lembrança da pessoa de forma simbólica e respeitar os próprios limites, sem obrigação de parecer feliz.",
+    publicadoEm: "2026-11-20",
+    categoria: "Luto",
+    palavrasChave: [
+      "natal sem quem partiu",
+      "primeiro natal sem minha mãe",
+      "luto no fim de ano",
+      "como passar o natal de luto",
+      "saudade no natal",
+    ],
+    secoes: [
+      {
+        titulo: "Por que as festas doem tanto no luto",
+        paragrafos: [
+          "Dezembro é um mês de encontros, rituais e lembranças. Tudo isso torna a ausência mais visível: a cadeira vazia na mesa, a receita que só ela fazia, o abraço da meia-noite que não vai acontecer. Ao mesmo tempo, o mundo ao redor pede alegria, e quem está de luto pode se sentir deslocado ou culpado por não acompanhar o clima.",
+          "Muitas pessoas relatam que a expectativa antes da data é ainda mais difícil do que o próprio dia. Isso é comum e esperado.",
+        ],
+      },
+      {
+        titulo: "Planeje antes, em vez de esperar o dia chegar",
+        lista: [
+          "Decida com antecedência onde e com quem quer estar. Também é válido escolher ficar mais quieto.",
+          "Combine com a família o que será mantido e o que pode mudar neste ano.",
+          "Tenha um plano B: poder sair mais cedo ou ter um lugar para se recolher alivia a pressão.",
+          "Avise alguém de confiança que este período está difícil e peça companhia, se precisar.",
+        ],
+      },
+      {
+        titulo: "Tradições podem mudar",
+        paragrafos: [
+          "Não existe obrigação de manter tudo como era. Algumas famílias preferem mudar o local da ceia, o horário ou o formato. Outras escolhem manter exatamente igual, como forma de homenagem. As duas escolhas são legítimas, e podem ser diferentes de um ano para outro.",
+        ],
+      },
+      {
+        titulo: "Formas de incluir quem partiu",
+        lista: [
+          "Acender uma vela ou deixar uma foto em um lugar especial.",
+          "Preparar o prato preferido da pessoa.",
+          "Fazer um brinde ou um momento de silêncio em memória dela.",
+          "Contar histórias e lembranças à mesa.",
+          "Escrever uma carta para quem partiu.",
+          "Fazer uma doação ou uma ação solidária em nome dela.",
+        ],
+        depois: [
+          "Falar de quem partiu costuma aliviar mais do que evitar o assunto. Muitas vezes, todos à mesa estão pensando na mesma pessoa.",
+        ],
+      },
+      {
+        titulo: "Respeite seus limites",
+        paragrafos: [
+          "É possível sentir saudade e, no mesmo dia, rir de uma lembrança ou aproveitar um momento com quem ficou. Sentir alegria não é trair quem partiu. Também é válido não ter vontade de comemorar. Cuide do sono, da alimentação e evite usar o álcool para anestesiar a dor.",
+        ],
+      },
+      {
+        titulo: "Quando buscar apoio",
+        paragrafos: [
+          "Se a aproximação das festas trouxer angústia intensa, isolamento ou a sensação de que não vai dar conta, conversar com uma psicóloga pode ajudar a planejar esse período. Em situação de crise, ligue 188 (CVV, 24 horas) ou 192 (SAMU).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        pergunta: "É normal não querer comemorar o Natal depois de uma perda?",
+        resposta:
+          "Sim. É comum não ter vontade de comemorar, principalmente no primeiro ano. Você pode escolher um formato mais simples, ou mesmo não participar, sem culpa.",
+      },
+      {
+        pergunta: "Como falar de quem partiu na ceia sem deixar todos tristes?",
+        resposta:
+          "Um gesto simples, como um brinde, uma vela ou contar uma lembrança boa, costuma acolher a saudade de todos. Combine antes com a família se preferir.",
+      },
+    ],
+  },
+  {
+    slug: "luto-na-adolescencia",
+    titulo: "Luto na adolescência: sinais e como apoiar",
+    tituloSeo: "Luto na adolescência: sinais e como os pais podem ajudar",
+    descricao:
+      "Como o adolescente vive o luto, sinais de que ele precisa de ajuda e o que pais e familiares podem fazer para apoiar sem pressionar.",
+    resumo:
+      "Adolescentes vivem o luto de um jeito próprio: podem parecer indiferentes, ficar irritados, se isolar ou buscar apoio mais nos amigos do que na família. Para apoiar, ajuda estar disponível sem forçar conversas, manter alguma rotina, falar com honestidade sobre a perda e buscar acompanhamento psicológico quando os sinais de sofrimento persistem.",
+    publicadoEm: "2026-11-20",
+    categoria: "Adolescentes",
+    palavrasChave: [
+      "luto na adolescência",
+      "adolescente de luto",
+      "como ajudar adolescente no luto",
+      "psicóloga para adolescentes",
+    ],
+    secoes: [
+      {
+        titulo: "Como o adolescente vive o luto",
+        paragrafos: [
+          "Na adolescência, a perda acontece em meio a muitas outras mudanças: corpo, identidade, amizades, escola. Por isso, o luto pode aparecer de formas que confundem os adultos. Um adolescente que não chora no velório e volta a sair com os amigos poucos dias depois não está necessariamente bem, nem indiferente.",
+          "É comum que ele alterne entre momentos de tristeza intensa e momentos em que parece seguir normalmente. Também é comum que evite falar em casa para não preocupar os pais, especialmente se percebe a família muito abalada.",
+        ],
+      },
+      {
+        titulo: "Reações comuns",
+        lista: [
+          "Irritabilidade, explosões de raiva ou impaciência.",
+          "Isolamento no quarto, nas telas ou longe da família.",
+          "Dificuldade de concentração e queda no rendimento escolar.",
+          "Mudanças no sono e no apetite.",
+          "Culpa ou medo de que outras pessoas também morram.",
+          "Necessidade de estar mais com os amigos.",
+        ],
+      },
+      {
+        titulo: "Como pais e familiares podem ajudar",
+        lista: [
+          "Estar disponível, sem forçar conversas. Momentos lado a lado, como no carro ou cozinhando, costumam facilitar.",
+          "Falar com honestidade sobre o que aconteceu, sem esconder informações importantes.",
+          "Mostrar que também sente falta. Ver o adulto expressar a dor autoriza o jovem a sentir.",
+          "Manter alguma rotina e os limites de sempre, com flexibilidade.",
+          "Avisar a escola, para que professores possam acolher.",
+          "Incluir o adolescente nas decisões sobre rituais e homenagens.",
+        ],
+      },
+      {
+        titulo: "Sinais de que é hora de buscar ajuda",
+        paragrafos: [
+          "Vale procurar uma psicóloga se o isolamento, a tristeza ou a irritação persistem por semanas, se há recusa em ir à escola, uso de álcool ou outras drogas, comportamentos de risco ou falas de desesperança.",
+          "Se o adolescente falar em morrer ou se machucar, busque ajuda imediata: 188 (CVV) ou 192 (SAMU).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        pergunta: "Meu filho não chorou nem fala da perda. Isso é normal?",
+        resposta:
+          "Pode ser. Muitos adolescentes expressam o luto de forma indireta ou em outros espaços, como com os amigos. Observe sinais de sofrimento ao longo do tempo e mantenha a porta aberta para conversar.",
+      },
+      {
+        pergunta: "Terapia ajuda adolescentes em luto?",
+        resposta:
+          "Sim. Ter um espaço próprio e sigiloso, fora de casa, ajuda o adolescente a falar do que sente sem medo de preocupar a família.",
+      },
+    ],
+  },
+  {
+    slug: "luto-gestacional",
+    titulo: "Luto gestacional: a dor de perder um bebê durante a gestação",
+    tituloSeo: "Luto gestacional: como lidar com a perda do bebê",
+    descricao:
+      "A perda gestacional é um luto real, muitas vezes invisível. Como lidar com a dor, com a culpa e com os comentários dos outros, e quando buscar ajuda.",
+    resumo:
+      "O luto gestacional é a dor pela perda de um bebê durante a gestação ou logo após o nascimento. É um luto real, que envolve o bebê, os planos e o futuro imaginado, mas costuma ser pouco reconhecido pelas pessoas ao redor. Validar essa dor, falar sobre o bebê e buscar apoio, inclusive psicológico, ajuda a atravessar esse momento.",
+    publicadoEm: "2026-11-20",
+    categoria: "Luto",
+    palavrasChave: [
+      "luto gestacional",
+      "perda gestacional",
+      "aborto espontâneo luto",
+      "luto perinatal",
+      "como superar a perda de um bebê",
+    ],
+    secoes: [
+      {
+        titulo: "Um luto que muitas vezes não é visto",
+        paragrafos: [
+          "Desde o teste positivo, muitas mães e pais começam a construir um vínculo: imaginam o rosto, escolhem nomes, fazem planos. Quando a gestação é interrompida, perde-se o bebê e também todo esse futuro.",
+          "Mesmo assim, é comum ouvir frases como “foi melhor assim”, “logo vem outro” ou “pelo menos foi no começo”. Ditas com a intenção de consolar, elas podem fazer a dor parecer exagerada ou ilegítima. Na psicologia, esse tipo de perda é um exemplo de luto não reconhecido.",
+        ],
+      },
+      {
+        titulo: "Reações comuns",
+        lista: [
+          "Tristeza profunda e choro frequente.",
+          "Culpa e busca por algo que poderia ter sido feito diferente.",
+          "Raiva, inclusive do próprio corpo.",
+          "Dificuldade de conviver com gestantes ou bebês.",
+          "Medo em relação a uma nova gestação.",
+          "Sensação de solidão, quando o assunto é evitado pelas pessoas.",
+        ],
+        depois: [
+          "Na grande maioria das vezes, a perda gestacional não é causada por nada que a mãe fez ou deixou de fazer. A culpa é uma reação comum do luto, mas não corresponde aos fatos.",
+        ],
+      },
+      {
+        titulo: "O que pode ajudar",
+        lista: [
+          "Dar nome ao bebê, se fizer sentido para vocês.",
+          "Guardar lembranças, como exames, fotos ou objetos.",
+          "Criar um ritual de despedida ou homenagem.",
+          "Falar sobre a perda com pessoas que acolhem.",
+          "Respeitar o tempo do casal: cada um pode viver o luto de um jeito.",
+          "Esperar o momento certo, para vocês, antes de pensar em nova gestação.",
+        ],
+      },
+      {
+        titulo: "O luto do pai e da família",
+        paragrafos: [
+          "Os pais também vivem esse luto, embora muitas vezes sejam vistos apenas como apoio da mãe. Avós e irmãos também podem sentir a perda. Reconhecer a dor de todos ajuda a família a se apoiar mutuamente.",
+        ],
+      },
+      {
+        titulo: "Quando procurar ajuda",
+        paragrafos: [
+          "Se a tristeza, a culpa ou a ansiedade persistem e dificultam a rotina, se surgem crises de pânico ou se o medo impede de pensar no futuro, o acompanhamento psicológico pode ajudar. Em situação de crise, ligue 188 (CVV) ou 192 (SAMU).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        pergunta: "Perder um bebê no início da gestação também é luto?",
+        resposta:
+          "Sim. O vínculo não depende do tempo de gestação. A dor é legítima em qualquer momento da perda.",
+      },
+      {
+        pergunta: "O que dizer para alguém que perdeu um bebê?",
+        resposta:
+          "Algo simples como “sinto muito pela perda do seu bebê, estou aqui” acolhe mais do que tentar explicar ou minimizar. Se souber o nome do bebê, use-o.",
+      },
+    ],
+  },
+  {
+    slug: "luto-pela-morte-do-pai-ou-da-mae",
+    titulo: "Luto pela morte do pai ou da mãe: como lidar com essa perda",
+    tituloSeo: "Luto pela morte do pai ou da mãe: como lidar",
+    descricao:
+      "Perder o pai ou a mãe muda a forma como nos vemos no mundo. Reações comuns, desafios práticos e emocionais e quando buscar ajuda psicológica.",
+    resumo:
+      "Perder o pai ou a mãe é uma das perdas mais marcantes da vida, em qualquer idade. Além da saudade, ela pode trazer culpa, conflitos entre irmãos, a sensação de perder a própria referência e a responsabilidade por decisões práticas. Permitir-se viver o luto, dividir tarefas e manter o vínculo por meio das lembranças ajuda a atravessar esse processo.",
+    publicadoEm: "2026-11-20",
+    categoria: "Luto",
+    palavrasChave: [
+      "luto pela morte da mãe",
+      "luto pela morte do pai",
+      "como superar a morte da mãe",
+      "perdi meu pai",
+      "saudade da mãe que faleceu",
+    ],
+    secoes: [
+      {
+        titulo: "Uma perda que muda o lugar da gente no mundo",
+        paragrafos: [
+          "Pai e mãe costumam ser as primeiras referências de cuidado e de história. Quando partem, muitas pessoas descrevem a sensação de ficar sem chão ou de se tornar, de repente, a geração mais velha da família. Isso acontece mesmo quando a perda era esperada, após uma longa doença, e mesmo quando a relação era difícil.",
+        ],
+      },
+      {
+        titulo: "Reações comuns",
+        lista: [
+          "Saudade intensa, especialmente em momentos em que você ligaria para ele ou para ela.",
+          "Culpa por coisas ditas, não ditas ou por decisões sobre o tratamento.",
+          "Alívio, quando houve muito sofrimento antes da morte, seguido de culpa por sentir alívio.",
+          "Sentimentos ambivalentes, quando a relação tinha conflitos.",
+          "Cansaço físico e emocional, principalmente para quem foi cuidador.",
+        ],
+        depois: [
+          "Sentimentos contraditórios são comuns no luto e não diminuem o amor ou a importância da relação.",
+        ],
+      },
+      {
+        titulo: "Os desafios práticos",
+        paragrafos: [
+          "Inventário, documentos, a casa, os objetos pessoais, o cuidado com o pai ou a mãe que ficou: as tarefas práticas chegam junto com a dor e podem gerar tensões entre irmãos. Algumas orientações:",
+        ],
+        lista: [
+          "Não é preciso decidir tudo de uma vez. O que não é urgente pode esperar.",
+          "Divida as tarefas e combine as decisões em conversas com todos.",
+          "Respeite que cada irmão vive o luto de um jeito e em um ritmo.",
+          "Separar os objetos pessoais pode ser feito aos poucos, quando houver condições.",
+        ],
+      },
+      {
+        titulo: "Formas de manter o vínculo",
+        paragrafos: [
+          "Cozinhar uma receita da família, contar histórias para os filhos, guardar uma carta, visitar um lugar especial ou carregar adiante valores que ele ou ela ensinou: são formas de manter viva a relação. A psicologia do luto reconhece esse vínculo contínuo como parte saudável do processo.",
+        ],
+      },
+      {
+        titulo: "Quando buscar ajuda",
+        paragrafos: [
+          "Procure apoio psicológico se a dor dificulta a rotina por muito tempo, se a culpa é intensa, se há conflitos familiares difíceis de manejar ou se você foi cuidador e se sente esgotado. Em situação de crise, ligue 188 (CVV) ou 192 (SAMU).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        pergunta: "É normal sentir alívio quando o pai ou a mãe morre após longa doença?",
+        resposta:
+          "Sim. O alívio geralmente é pelo fim do sofrimento, de quem partiu e de quem cuidava. Ele convive com a saudade e não significa falta de amor.",
+      },
+      {
+        pergunta: "E se a relação com meu pai ou minha mãe era difícil?",
+        resposta:
+          "O luto também acontece em relações conflituosas e costuma ser mais confuso, com raiva, culpa e tristeza misturadas. A terapia é um bom espaço para elaborar essas emoções.",
+      },
+    ],
+  },
+  {
+    slug: "como-explicar-a-morte-para-uma-crianca",
+    titulo: "Como explicar a morte para uma criança",
+    tituloSeo: "Como explicar a morte para uma criança: guia para pais",
+    descricao:
+      "Como contar para uma criança que alguém morreu: palavras claras, o que evitar, como ela entende a morte em cada idade e como acolher as reações.",
+    resumo:
+      "Para explicar a morte a uma criança, use palavras simples e verdadeiras, como “morreu” e “o corpo parou de funcionar”, em vez de “dormiu” ou “viajou”. Conte o quanto antes, com alguém de confiança por perto, responda às perguntas com honestidade, deixe a criança expressar o que sente e mantenha a rotina o máximo possível.",
+    publicadoEm: "2026-11-20",
+    categoria: "Família",
+    palavrasChave: [
+      "como explicar a morte para uma criança",
+      "como contar para criança que alguém morreu",
+      "criança e luto",
+      "luto infantil",
+    ],
+    secoes: [
+      {
+        titulo: "Fale com clareza",
+        paragrafos: [
+          "A vontade de proteger a criança leva muitos adultos a usar expressões como “a vovó dormiu”, “virou estrelinha” ou “foi viajar”. Essas frases podem gerar medo de dormir, a espera de que a pessoa volte ou confusão sobre o que aconteceu.",
+          "É mais acolhedor usar palavras simples e verdadeiras: “O vovô morreu. Quando alguém morre, o corpo para de funcionar: não respira mais, não sente dor, não come. Ele não vai voltar, e é por isso que estamos tristes.” Crenças religiosas da família podem ser compartilhadas junto com essa explicação.",
+        ],
+      },
+      {
+        titulo: "Como a criança entende a morte",
+        paragrafos: [
+          "A compreensão de que a morte é permanente, que acontece com todos os seres vivos e que o corpo deixa de funcionar se desenvolve aos poucos ao longo da infância. Por isso:",
+        ],
+        lista: [
+          "Crianças pequenas podem perguntar várias vezes quando a pessoa vai voltar. Responda com paciência, sempre com a mesma verdade.",
+          "É comum que brinquem de morte ou de funeral. É uma forma de elaborar o que aconteceu.",
+          "Crianças maiores podem fazer perguntas concretas sobre o corpo, o enterro ou a causa. Responda de forma simples e honesta.",
+          "Algumas acham que a morte aconteceu por algo que pensaram ou fizeram. Diga claramente que não foi culpa delas.",
+        ],
+      },
+      {
+        titulo: "Como contar",
+        lista: [
+          "Conte o quanto antes, para que a criança não saiba por outras pessoas.",
+          "Escolha um lugar tranquilo, com um adulto de confiança por perto.",
+          "Use frases curtas e verifique o que ela entendeu.",
+          "Mostre que também está triste. Chorar junto não faz mal à criança.",
+          "Pergunte se ela quer participar do velório ou de uma despedida, explicando antes como será.",
+        ],
+      },
+      {
+        titulo: "Depois da notícia",
+        paragrafos: [
+          "Mantenha a rotina de escola, sono e alimentação o máximo possível: ela dá segurança. Avise a escola. Deixe a criança desenhar, escrever ou guardar um objeto de quem partiu. E esteja disponível para as perguntas, que podem voltar semanas ou meses depois.",
+        ],
+      },
+      {
+        titulo: "Quando procurar ajuda",
+        paragrafos: [
+          "Vale buscar orientação profissional se, depois de algumas semanas, a criança apresenta medo intenso de se separar dos pais, regressões importantes (como voltar a fazer xixi na cama), isolamento, agressividade ou queda acentuada na escola. Os próprios pais, também enlutados, podem se beneficiar de apoio psicológico para conseguir cuidar de si e dos filhos.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        pergunta: "A criança deve ir ao velório?",
+        resposta:
+          "Depende da criança e da família. Se ela quiser ir, explique antes o que vai ver e garanta que um adulto de confiança fique com ela e possa sair se for preciso.",
+      },
+      {
+        pergunta: "Posso chorar na frente do meu filho?",
+        resposta:
+          "Sim. Ver o adulto triste e explicar o motivo ensina que sentir é permitido. O importante é a criança saber que continua sendo cuidada.",
+      },
+    ],
+  },
+  {
     slug: "psicologa-para-luto-em-rondonopolis",
     titulo: "Psicóloga para luto em Rondonópolis: como funciona o acompanhamento",
     tituloSeo: "Psicóloga para luto em Rondonópolis – MT: como funciona",

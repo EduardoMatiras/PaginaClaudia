@@ -1142,3 +1142,35 @@ address {
     display: none;
   }
 }
+
+/* ---------- Páginas de serviço ---------- */
+.servico-cta {
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+.servico-final {
+  display: block;
+}
+.artigo-corpo a {
+  color: var(--petroleo);
+}
+.local-servicos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.local-servicos a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--petroleo);
+  border: 1px solid var(--petroleo);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.local-servicos a:hover {
+  background: var(--petroleo);
+  color: var(--creme);
+}
+.artigo-servicos {
+  margin-top: 24px;
+}
