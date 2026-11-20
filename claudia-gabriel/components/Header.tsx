@@ -1,17 +1,21 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/public/logo.png";
 
 export default function Header() {
   return (
     <header className="header">
       <div className="navbar">
-        <a href="#topo" className="header-logo">
-          <Image src={logo} alt="Claudia Gabriel" priority />
-        </a>
+        <Link href="/" className="header-logo" aria-label="Claudia Gabriel – página inicial">
+          <Image src={logo} alt="Claudia Gabriel" priority sizes="200px" />
+        </Link>
         <nav aria-label="Principal">
-          <a href="#sobre">Sobre mim</a>
-          <a href="#atendimento">Atendimento</a>
-          <a href="#contato">Contato</a>
+          <Link href="/#sobre">Sobre mim</Link>
+          <Link href="/#atendimento" className="nav-opcional">
+            Atendimento
+          </Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/#contato">Contato</Link>
         </nav>
       </div>
     </header>

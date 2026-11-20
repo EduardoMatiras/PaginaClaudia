@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: seo.titulo, template: `%s | ${seo.tituloCurto}` },
+  title: { default: seo.titulo, template: "%s | Psicóloga Claudia Gabriel" },
   description: seo.descricao,
   keywords: seo.palavrasChave,
   applicationName: seo.tituloCurto,

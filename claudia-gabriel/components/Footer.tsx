@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export default function Footer() {
@@ -17,7 +18,10 @@ export default function Footer() {
             (SAMU).
           </div>
         </div>
-        <a href={site.instagram.url} target="_blank" rel="noopener me">Instagram {site.instagram.handle}</a>
+        <nav className="footer-links" aria-label="Rodapé">
+          <Link href="/blog">Blog sobre luto</Link>
+          <a href={site.instagram.url} target="_blank" rel="noopener me">Instagram {site.instagram.handle}</a>
+        </nav>
       </div>
     </footer>
   );

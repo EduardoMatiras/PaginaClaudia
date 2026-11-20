@@ -9,14 +9,15 @@ import AtendimentoLocal from "@/components/AtendimentoLocal";
 import Perguntas from "@/components/Perguntas";
 import Contato from "@/components/Contato";
 import Footer from "@/components/Footer";
-import { jsonLd } from "@/lib/seo";
+import BlogDestaque from "@/components/BlogDestaque";
+import { jsonLd, jsonLdScript } from "@/lib/seo";
 
 export default function Home() {
   return (
     <div className="page">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={jsonLdScript(jsonLd())}
       />
       <Header />
       <main>
@@ -27,6 +28,7 @@ export default function Home() {
         <ComoFunciona />
         <AtendimentoLocal />
         <PrimeiraVez />
+        <BlogDestaque />
         <Perguntas />
         <Contato />
       </main>

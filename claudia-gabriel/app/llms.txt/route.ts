@@ -1,11 +1,16 @@
 import { site, whatsappLink } from "@/lib/site";
 import { faq, seo } from "@/lib/seo";
+import { postsOrdenados } from "@/lib/blog";
 
 // /llms.txt: resumo em Markdown para modelos de linguagem (padrão llmstxt.org).
 // Gerado a partir dos mesmos dados do site, então nunca fica desatualizado.
 export const dynamic = "force-static";
 
 export function GET() {
+  const artigos = postsOrdenados
+    .map((p) => `- [${p.titulo}](${site.url}/blog/${p.slug}): ${p.resumo}`)
+    .join("\n");
+
   const perguntas = faq.map((f) => `### ${f.pergunta}\n\n${f.resposta}`).join("\n\n");
 
   const corpo = `# ${seo.tituloCurto}
@@ -44,6 +49,11 @@ Este site não oferece atendimento de emergência. Em crise, ligue 188 (CVV) ou 
 ## Páginas
 
 - [Página principal](${site.url}/): apresentação, sobre a psicóloga, atendimento, perguntas frequentes e contato.
+- [Blog](${site.url}/blog): artigos sobre luto e perdas.
+
+## Artigos
+
+${artigos}
 `;
 
   return new Response(corpo, {

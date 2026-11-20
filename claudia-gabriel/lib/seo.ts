@@ -1,3 +1,4 @@
+import type { Post } from "./blog";
 import { site, telefoneInternacional, whatsappLink } from "./site";
 
 export const seo = {
@@ -311,4 +312,99 @@ export function jsonLd() {
       },
     ],
   };
+}
+
+// ---------- Blog ----------
+
+const ref = (ancora: string) => ({ "@id": `${site.url}/#${ancora}` });
+
+function migalhas(itens: { nome: string; url: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: itens.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.nome,
+      item: item.url,
+    })),
+  };
+}
+
+export function blogJsonLd(lista: Post[]) {
+  const url = `${site.url}/blog`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": `${url}#blog`,
+        url,
+        name: "Blog da Psicóloga Claudia Gabriel",
+        description:
+          "Artigos sobre luto, perdas e saúde emocional escritos pela psicóloga Claudia Gabriel, de Rondonópolis – MT.",
+        inLanguage: "pt-BR",
+        author: ref("claudia"),
+        publisher: ref("consultorio"),
+        isPartOf: ref("website"),
+        blogPost: lista.map((p) => ({
+          "@type": "BlogPosting",
+          headline: p.titulo,
+          url: `${url}/${p.slug}`,
+          datePublished: p.publicadoEm,
+        })),
+      },
+      migalhas([
+        { nome: "Início", url: site.url },
+        { nome: "Blog", url },
+      ]),
+    ],
+  };
+}
+
+export function postJsonLd(post: Post) {
+  const url = `${site.url}/blog/${post.slug}`;
+  const grafo: object[] = [
+    {
+      "@type": "BlogPosting",
+      "@id": `${url}#artigo`,
+      mainEntityOfPage: url,
+      url,
+      headline: post.titulo,
+      description: post.descricao,
+      abstract: post.resumo,
+      image: `${site.url}/opengraph-image.jpg`,
+      datePublished: post.publicadoEm,
+      dateModified: post.atualizadoEm ?? post.publicadoEm,
+      inLanguage: "pt-BR",
+      articleSection: post.categoria,
+      keywords: post.palavrasChave.join(", "),
+      author: ref("claudia"),
+      reviewedBy: ref("claudia"),
+      publisher: ref("consultorio"),
+      isPartOf: { "@id": `${site.url}/blog#blog` },
+      about: ref("luto"),
+      speakable: { "@type": "SpeakableSpecification", cssSelector: [".artigo-resumo"] },
+    },
+    migalhas([
+      { nome: "Início", url: site.url },
+      { nome: "Blog", url: `${site.url}/blog` },
+      { nome: post.titulo, url },
+    ]),
+  ];
+  if (post.faq?.length) {
+    grafo.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: post.faq.map((f) => ({
+        "@type": "Question",
+        name: f.pergunta,
+        acceptedAnswer: { "@type": "Answer", text: f.resposta },
+      })),
+    });
+  }
+  return { "@context": "https://schema.org", "@graph": grafo };
+}
+
+export function jsonLdScript(dados: object) {
+  return { __html: JSON.stringify(dados).replace(/</g, "\u003c") };
 }
