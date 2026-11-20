@@ -1,7 +1,8 @@
 // Dados editáveis do site. Os valores entre colchetes são placeholders do layout original.
 export const site = {
-  // TROCAR pelo domínio definitivo antes de publicar (usado em canonical, sitemap e schema).
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.psicologaclaudiagabriel.com.br",
+  // Domínio oficial (usado em canonical, sitemap, robots, Open Graph e schema). Sempre com www,
+  // que é a versão final: o domínio sem www redireciona para ela.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.psiclaudiagabriel.com.br",
   nome: "Claudia Gabriel",
   crp: "18/8181",
   anosExperiencia: "[X]",
